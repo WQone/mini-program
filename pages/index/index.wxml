@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" style="height:240px">
+  <block wx:for="{{imgUrls}}" wx:key="item">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style="width: 100%;" bindtap="wuqian" data-index="{{index}}" />
+    </swiper-item>
+  </block>
+</swiper>
+<button type="primary" bindtap="choosePhoto">选择图片</button>
+<button type="primary" open-type="share">转发</button>
+<view>
+  <image class="show-image" mode="aspectFitf" src="{{imgSrc}}"></image>
+</view>
+<!-- <slider bindchange="intervalChange" show-value min="500" max="2000"/> interval -->
+<!-- <slider bindchange="durationChange" show-value min="1000" max="10000"/> duration -->

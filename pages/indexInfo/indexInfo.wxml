@@ -1,0 +1,2 @@
+<image src="../../img/answerPage.jpg" mode="aspectFill" style='width:100%;'></image>
+  <button class="answer_button" bindtap="showQueation"> 去出题 </button>

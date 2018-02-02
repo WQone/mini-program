@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/indexInfo/indexInfo",
+    "pages/question/question",
+    "pages/mine/mine",
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffc0cb",
+    "navigationBarTitleText": "GIFT",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ffc0cb",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/welcome/welcome",
+        "text": "首页",
+        "iconPath": "img/home_light.png",
+        "selectedIconPath": "img/home_lights.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "分类",
+        "iconPath": "img/friend_favor.png",
+        "selectedIconPath": "img/friend_favors.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的订单",
+        "iconPath": "img/friend_favor.png",
+        "selectedIconPath": "img/friend_favors.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

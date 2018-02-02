@@ -1,0 +1,8 @@
+.answerPage {
+}
+.button {
+  color: white;
+}
+image{
+   width:100%; 
+}

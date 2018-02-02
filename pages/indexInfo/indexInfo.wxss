@@ -1,0 +1,6 @@
+.answer_button {
+  color: white;
+  background: #161112;
+  width: 90%;
+  border-radius: 46rpx;
+}
