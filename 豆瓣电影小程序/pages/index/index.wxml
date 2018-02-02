@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="indexTitle">{{title}}</view>
+
+  <scroll-view class="indexContent" scroll-y bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" bindscroll="scrollFn">
+    <navigator class="contentList" wx:for="{{movies}}" wx:key="*this" url="../movie/movie?id={{item.id}}">
+      <view class="List_img">
+        <image src="{{item.images.small}}"></image>
+      </view>
+      <view class="text">
+        <view class="List_name">
+          {{item.title}}
+        </view>
+        <view class="List_othername">
+          {{item.original_title}}({{item.year}})
+        </view>
+        <view class="List_author" wx:for="{{item.directors}}" wx:key="*this">{{item.name}}</view>
+      </view>
+      <view class="List_score">
+        {{item.rating.average}}</view>
+    </navigator>
+
+  </scroll-view>
+
+
+
+
+
+</view>

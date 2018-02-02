@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+
+    <view class="searchTop">
+
+    <input placeholder="搜索"  type="text" bindchange="userFn" />
+     <button bindtap="login">搜索</button>
+    </view>
+
+    <view class="indexContent">
+        <view class="contentList" wx:for="{{sdata}}"                        wx:key="*this">
+            <view class="List_img">
+                <image src="{{item.images.medium}}"></image> 
+            </view>
+            <view class="text">
+                <view class="List_name">
+                        {{item.title}} 
+                </view>
+                <view class="List_othername">
+                   {{item.original_title}}({{item.year}})
+                </view>
+                <view class="List_author">弗兰克·德拉邦特</view>
+            </view>
+            <view class="List_score">
+            {{item.rating.average}}</view>
+        </view>
+        
+    </view>
+
+
+
+
+
+</view> 
