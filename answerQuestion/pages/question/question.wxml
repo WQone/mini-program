@@ -1,9 +1,9 @@
 <view class='answerPage'>
    <view wx:for="{{questionList}}"  wx:key="questionList">
-  <view wx:if="{{index + 1 === questionIndex}}">
-     <view> {{item.question}}{{questionIndex}}/{{index}}</view>
+  <view>
+     <view class='answer_question'> {{item.question}}</view>
      <view  wx:for="{{item.answer}}"  wx:for-item="children"  wx:key="index">
-     <view  data-index="{{children.id}}" bindtap="myAnswer"> {{children.id}} {{children.name}}</view>
+        <view class='answer_list' data-status="{{children.status}}" id="{{children.id}}" bindtap="NextQueation"> {{children.name}}</view>
      </view>
      </view>
   </view>

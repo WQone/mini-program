@@ -1,8 +1,14 @@
 .answerPage {
 }
-.button {
-  color: white;
+.answer_question {
+  
 }
-image{
-   width:100%; 
+.answer_list {
+  height: 80rpx;
+  background: white;
+  width: 90%;
+  margin-bottom: 10rpx;
+  line-height: 80rpx; 
+  /* margin: auto; */
+  /* padding: 10rpx; */
 }
