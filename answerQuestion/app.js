@@ -3,6 +3,7 @@ App({
 
   onLaunch: function (ops) {
     console.log('刚进入', ops);
+    
 
     // 日志---展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
