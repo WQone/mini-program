@@ -1,1 +1,49 @@
 /**index.wxss**/
+/* 手机号登录框 */
+.mobile-login-content{
+    width: 100%;
+    height: 240rpx;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+.mobile-login-content input{
+    display: block;
+    width: 10rem;
+}
+.mobile-login-number{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 120rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #F7F7F7;
+    padding-left: 50rpx;
+}
+.mobile-login-getvcode{
+    position: absolute;
+    top: 32rpx;
+    right: 20rpx;
+    background-color: #1ECFA7;
+    line-height: 56rpx;
+    width: 240rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    color: #FFFFFF;
+}
+.mobile-login-getvcode.disable{
+    background-color: #D2D5D8;
+    color: #FFFFFF;
+}
+.mobile-login-vcode{
+    display: flex;
+    width: 100%;
+    height: 120rpx;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50rpx;
+}

@@ -5,11 +5,12 @@ Page({
     data: {
         has_get_vcode: false,//默认
         mobile_login: false,//默认
-        vcodeGetTime: 0,
         inputVcode: '',
         userInfo: {},
         inputMobileNumber: '',
         checkMobilePass: false,
+        vcodeGetTime: 0,
+        
         systemInfo: {},
         fromPage: ''
     },

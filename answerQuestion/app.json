@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/logs/logs",
     "pages/welcome/welcome",
     "pages/indexInfo/indexInfo",
     "pages/question/question",
     "pages/mine/mine",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,7 +26,7 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "分类",
+        "text": "涂鸦",
         "iconPath": "img/friend_favor.png",
         "selectedIconPath": "img/friend_favors.png"
       },
