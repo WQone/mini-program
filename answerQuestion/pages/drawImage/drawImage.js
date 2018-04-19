@@ -16,42 +16,42 @@ Page({
   onLoad() {
     // 创建动画
     this.animation = wx.createAnimation({
-      duration: 300,
+      duration: 1000,
       timingFunction: 'linear',
-    })
+    });
     var that = this;
-    this.ctx = wx.createCanvasContext('myCanvas');
     // 获取canvas标签节点信息--高和宽
-    wx.createSelectorQuery().select('#myCanvas').boundingClientRect(function(rect){
-      console.log(rect.width);
-      that.canvasWidth = rect.width;
-      that.canvasHeight = rect.height;
-      console.log('hh2', that.canvasWidth, this.canvasWidth)
-    }).exec()
-    console.log('hh1', this.canvasWidth)
+    wx.createSelectorQuery().select('#myCanvas').boundingClientRect(function (rect) {
+        console.log(rect.width);
+        that.getInfo(rect.width, rect.height);
+     }).exec();
     // 创建canvas
+    // this.ctx = wx.createCanvasContext('myCanvas');
+  },
+  getInfo(width, height) {
+    console.log(width, height);
+    this.canvasWidth = width;
+    this.canvasHeight = height;
   },
   // 每次打开页面时触发
   onShow() {
-    console.log('hh', this.canvasWidth)
     // 清空canvas
     // this.ctx.clearRect(0,0,this.canvasWidth,this.canvasHeight);
     // this.ctx.draw();
-    console.log("jjjj");
   },
   // 向下切换
   changeDown() {
     this.setData({
-      animationDown:this.animation.translateY(40).step().export(),
-      animationUp:this.animation.translateY(-40).step().export()
-    })
+    	animationDown: this.animation.translateY(40).step().export(),
+      animationUp: this.animation.translateY(-40).step().export(),
+    });
   },
   // 向上切换
   changeUp() {
     this.setData({
-      animationDown:this.animation.translateY(0).step().export(),
-      animationUp:this.animation.translateY(0).step().export()
-    })
+      animationDown: this.animation.translateY(0).step().export(),
+      animationUp: this.animation.translateY(0).step().export(),
+    });
   },
   //手指触摸动作开始
   touchStart(e) {
@@ -109,7 +109,7 @@ Page({
     });
   },
   //手指触摸动作结束
-  touchEnd() {},
+  touchEnd() { },
   //启动橡皮擦方法
   clearCanvas() {
     if (this.isClear) {
@@ -132,46 +132,55 @@ Page({
   },
   // 选择图片
   chooseImage() {
+    console.log(this.canvasWidth);
+    const _this = this;
     wx.chooseImage({
       count: 1, // 默认9
-      success: function(res) {
+      success: (res) => {
+        console.log('res', res);
         // 获取图片的高宽
         wx.getImageInfo({
           src: res.tempFilePaths[0],
-          success: function(res1) {
-            console.log(res1);
+          success: (res1) => {
+            console.log('res1', res1);
             // 获取canvas标签节点的高宽
-            
+            const canvasWidth = this.canvasWidth;
+            const canvasHeight = this.canvasHeight;
             const w = res1.width;
             const h = res1.height;
             const dw = canvasWidth / w; //canvas与图片的宽高比
             const dh = canvasHeight / h;
-            // 裁剪图片中间部分
-            if ((w > canvasWidth && h > canvasHeight) || (w < canvasWidth && h < canvasHeight)) {
-              if (dw > dh) {
-                this.ctx.drawImage(res.tempFilePaths[0], 0, (h - canvasHeight / dw) / 2, w, canvasHeight / dw, 0, 0, canvasWidth, canvasHeight);
-              } else {
-                this.ctx.drawImage(res.tempFilePaths[0], (w - canvasWidth / dh) / 2, 0, canvasWidth / dh, h, 0, 0, canvasWidth, canvasHeight);
-              }
-            } else {
-              // 拉伸图片
-              if (w < canvasWidth) {
-                this.ctx.drawImage(res.tempFilePaths[0], 0, (h - canvasHeight / dw) / 2, w, canvasHeight / dw, 0, 0, canvasWidth, canvasHeight);
-              } else {
-                this.ctx.drawImage(res.tempFilePaths[0], (w - canvasWidth / dh) / 2, 0, canvasWidth / dh, h, 0, 0, canvasWidth, canvasHeight);
-              }
-            }
-            this.ctx.draw();
+            this.getImg(res, res1, w, h, dw, dh, canvasWidth, canvasHeight);
           },
         });
       },
     });
   },
+  getImg(res, res1, w, h, dw, dh, canvasWidth, canvasHeight) {
+    this.ctx = wx.createCanvasContext('myCanvas');
+    // 裁剪图片中间部分
+    if ((w > canvasWidth && h > canvasHeight) || (w < canvasWidth && h < canvasHeight)) {
+      if (dw > dh) {
+        this.ctx.drawImage(res.tempFilePaths[0], 0, (h - canvasHeight / dw) / 2,w,canvasHeight / dw,0,0,canvasWidth,canvasHeight);
+      } else {
+        this.ctx.drawImage(res.tempFilePaths[0], (w - canvasWidth / dh) / 2,0, canvasWidth / dh, h, 0, 0,canvasWidth, canvasHeight);
+      }
+    } else {
+      // 拉伸图片
+      if (w < canvasWidth) {
+        this.ctx.drawImage(res.tempFilePaths[0],0,(h - canvasHeight / dw) / 2,w,canvasHeight / dw,0,0,canvasWidth,canvasHeight);
+      } else {
+        this.ctx.drawImage(res.tempFilePaths[0],(w - canvasWidth / dh) / 2, 0,canvasWidth / dh,h,0,0, canvasWidth,canvasHeight);
+      }
+    }
+    console.log(this.ctx);
+    this.ctx.draw();
+  },
   // 保存图片
   saveImage() {
     wx.canvasToTempFilePath({
       canvasId: 'myCanvas',
-      success: function(res) {
+      success: function (res) {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
         });

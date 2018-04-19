@@ -11,7 +11,7 @@ page {
 
 .canvas_area {
   width: 100%;
-  height: calc(100% - 160rpx);
+  height: calc(100% - 40px);
   background-color: #f8f8f8;
   position: relative;
 }
@@ -24,21 +24,21 @@ page {
 
 .tools {
   width: 100%;
-  height: 160rpx;
+  height: 40px;
 }
 
 .canvas_tools {
   position: relative;
   width: 100%;
-  height: 80rpx;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .box {
-  width: 80rpx;
-  height: 80rpx;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: rebeccapurple;
   /* margin:10rpx 0; */

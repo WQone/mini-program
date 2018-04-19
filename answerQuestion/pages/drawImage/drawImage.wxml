@@ -1,5 +1,5 @@
-<view class="container">
-  <!--画布区域style='overflow:hidden;'-->
+<view class="container" style='overflow:hidden;'>
+  <!--画布区域-->
   <view class="canvas_area">
     <!--注意：同一页面中的 canvas-id 不可重复，如果使用一个已经出现过的 canvas-id，该 canvas 标签对应的画布将被隐藏并不再正常工作-->
     <canvas canvas-id="myCanvas" class="myCanvas" id="myCanvas" disable-scroll="false" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
