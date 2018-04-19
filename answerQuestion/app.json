@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/logs/logs",
+    "pages/drawImage/drawImage",
     "pages/welcome/welcome",
     "pages/indexInfo/indexInfo",
     "pages/question/question",
@@ -25,7 +25,7 @@
         "selectedIconPath": "img/home_lights.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/drawImage/drawImage",
         "text": "涂鸦",
         "iconPath": "img/friend_favor.png",
         "selectedIconPath": "img/friend_favors.png"
