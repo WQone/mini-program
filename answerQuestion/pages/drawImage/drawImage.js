@@ -16,8 +16,8 @@ Page({
   onLoad() {
     // 创建动画
     this.animation = wx.createAnimation({
-      duration: 1000,
-      timingFunction: 'linear',
+      duration: 500,
+      timingFunction: 'ease-in-out',
     });
     var that = this;
     // 获取canvas标签节点信息--高和宽
@@ -42,15 +42,15 @@ Page({
   // 向下切换
   changeDown() {
     this.setData({
-    	animationDown: this.animation.translateY(40).step().export(),
-      animationUp: this.animation.translateY(-40).step().export(),
+      animationUp: this.animation.translateY(-50).step().export(),
+    	animationDown: this.animation.translateY(50).step().export(),
     });
   },
   // 向上切换
   changeUp() {
     this.setData({
-      animationDown: this.animation.translateY(0).step().export(),
       animationUp: this.animation.translateY(0).step().export(),
+      animationDown: this.animation.translateY(0).step().export(),
     });
   },
   //手指触摸动作开始
