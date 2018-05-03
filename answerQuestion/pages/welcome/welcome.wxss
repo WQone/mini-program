@@ -5,12 +5,15 @@
   align-items: center;
 }
 
+/* open-data 的 display 默认值是 inline ，需要改为 inline-block 或 block ，并设置 overflow 为 hidden 才能设置圆角。 */
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
   margin-bottom: 30rpx; 
   border-radius: 50%;
   border: 1px solid white;
+  display:inline-block;
+  overflow:hidden;
 }
 
 .userinfo-nickname {

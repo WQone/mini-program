@@ -2,16 +2,16 @@
   "pages": [
     "pages/drawImage/drawImage",
     "pages/welcome/welcome",
+    "pages/index/index",
     "pages/indexInfo/indexInfo",
-    "pages/question/question",
-    "pages/mine/mine",
-    "pages/index/index"
+    "pages/question/question"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffc0cb",
     "navigationBarTitleText": "GIFT",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#a9b7b7",
@@ -31,7 +31,7 @@
         "selectedIconPath": "img/friend_favors.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/index/index",
         "text": "我的订单",
         "iconPath": "img/friend_favor.png",
         "selectedIconPath": "img/friend_favors.png"

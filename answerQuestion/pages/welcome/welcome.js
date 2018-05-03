@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
   data: {
-    userInfo: {}
   },
   //事件处理函数
   toInfoPage() {
@@ -18,13 +17,18 @@ Page({
     })
   },
   onLoad: function () {
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
+  },
+  // 显示赞赏码
+  shareM() {
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
+      urls: ['http://a4.qpic.cn/psb?/V138D4rB0wJstc/vBY.psUp86n2GkPBc2nMg09v11FQRssWvWPT3W8YZtU!/c/dEMBAAAAAAAA&ek=1&kp=1&pt=0&bo=UAVQBVAFUAUDORw!&vuin=1307144731&tm=1525316400&sce=60-2-2&rf=0-0'] // 需要预览的图片http链接列表
     })
-  }
+  },
+  // 顶部下拉刷新
+  onPullDownRefresh() {
+    setTimeout(() => {
+       wx.stopPullDownRefresh()
+    }, 1000);
+  },
 })

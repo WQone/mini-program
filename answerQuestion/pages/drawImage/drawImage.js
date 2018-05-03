@@ -1,9 +1,13 @@
+const toolLists = require('../../utils/questionList.js')
+
 Page({
   data: {
     pen: 3, //画笔粗细默认值
     color: '#cc0033', //画笔颜色默认值
-    animationDown: null,
-    animationUp: null,
+    animationData: {},
+    IsShowTool: true,
+    toolList: null,
+    toolListActive: null,
   },
   startX: 0, //保存X坐标轴变量
   startY: 0, //保存X坐标轴变量
@@ -14,10 +18,13 @@ Page({
   animation: null,
   //刚加载页面时触发一次
   onLoad() {
+    this.setData({
+      toolList: toolLists.toolList,
+    })
     // 创建动画
     this.animation = wx.createAnimation({
-      duration: 500,
-      timingFunction: 'ease-in-out',
+      duration: 300,
+      timingFunction: 'linear',
     });
     // 获取canvas标签节点信息--高和宽
     wx.createSelectorQuery().select('#myCanvas').boundingClientRect( (rect) => {
@@ -27,31 +34,17 @@ Page({
     // 创建canvas
     this.ctx = wx.createCanvasContext('myCanvas');
   },
+  
   // 每次打开页面时触发
   onShow() {
     // 清空canvas
     // this.ctx.clearRect(0,0,this.canvasWidth,this.canvasHeight);
     // this.ctx.draw();
   },
-  // 向下切换
-  changeDown() {
-    this.setData({
-      animationUp: this.animation.translateY(-50).step().export(),
-    	animationDown: this.animation.translateY(50).step().export(),
-    });
-  },
-  // 向上切换
-  changeUp() {
-    this.setData({
-      animationUp: this.animation.translateY(0).step().export(),
-      animationDown: this.animation.translateY(0).step().export(),
-    });
-  },
+  
+  
   //手指触摸动作开始
   touchStart(e) {
-    this.setData({
-    	animationDown: this.animation.translateY(50).step().export(),
-    });
     console.log('a');
     //得到触摸点的坐标
     this.startX = e.changedTouches[0].x;
@@ -108,10 +101,31 @@ Page({
   },
   //手指触摸动作结束
   touchEnd() {
-    this.setData({
-    	animationDown: this.animation.translateY(0).step().export(),
-    });
     console.log('d');
+  },
+  // 向下切换
+  changeDown() {
+    this.setData({
+      animationData: this.animation.translateY(50).step().export(),
+    });
+    setTimeout(()=> {
+      this.setData({
+        animationData: this.animation.translateY(0).step().export(),
+        IsShowTool: false,
+      })
+    }, 300);
+  },
+  // 向上切换
+  changeUp() {
+    this.setData({
+      animationData: this.animation.translateY(50).step().export(),
+    });
+    setTimeout(()=> {
+      this.setData({
+        animationData: this.animation.translateY(0).step().export(),
+        IsShowTool: true,
+      })
+    }, 300);
   },
   //启动橡皮擦方法
   clearCanvas() {
@@ -120,6 +134,19 @@ Page({
     } else {
       this.isClear = true;
     }
+  },
+  Select(e) {
+    console.log(e);
+    for (let i = 0; i < this.data.toolList.length; i++) {
+      const item = this.data.toolList[i];
+      if(e.currentTarget.dataset.type === item.type) {
+        this.setData({ toolListActive:item });
+        console.log(item);
+        this.changeDown();
+        break;
+      }
+    }
+    
   },
   //更改画笔大小的方法
   penSelect(e) {

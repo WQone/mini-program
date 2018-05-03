@@ -1,20 +1,21 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+    <open-data type="userNickName" lang="zh_CN" class="userinfo-nickname"></open-data>
   </view>
   <view class="userChoose" bindtap="toInfoPage">
-   
-      <image src="../../img/index-choose.jpg"  class='userChoose_img' mode='aspectFit'>
-      </image>
-      <view  class="userChoose_text">
-      <text  class="userChoose_text_title">你懂我吗？</text> 
-      <text class="userChoose_text_content">一个只有真正懂你的人,才能玩儿过的互动</text> 
-      </view>
-        
+
+    <image src="../../img/index-choose.jpg" class='userChoose_img' mode='aspectFit'>
+    </image>
+    <view class="userChoose_text">
+      <text class="userChoose_text_title">你懂我吗？</text>
+      <text class="userChoose_text_content">一个只有真正懂你的人,才能玩儿过的互动</text>
+    </view>
+
   </view>
   <view style="width:30px;height:30px;position:fixed;z-index:999;border-radius:50%;left:10px;bottom:10px;padding:5px;box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.2);background:white;">
-  <image src="../../img/gift.png" mode="scaleToFill" style="width:100%;height:100%;"></image></view>
+    <image src="../../img/gift.png" mode="scaleToFill" style="width:100%;height:100%;" bindtap='shareM'></image>
+  </view>
 
 </view>

@@ -3,7 +3,7 @@ App({
 
   onLaunch: function (ops) {
     console.log('刚进入', ops);
-    
+    this.toLogin();
 
     // 日志---展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -16,45 +16,22 @@ App({
     userInfo: null
   },
   // 登录
-  getUserInfo: function (cb) {
-    console.log('cb', cb);
-    var that = this
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    } else {
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
-    }
-  },
-  // -----  公共行为 ------
-  cancel() {
-    wx.showModal({
-      title: '警告',
-      content: '必须授权登录之后才能操作呢，是否重新授权登录？',
+  toLogin() {
+    wx.login({
       success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          wx.openSetting({
-            success: function (res) {
-              console.log('congsixn', res);
-              if (res.authSetting["scope.userInfo"]) {
-                //这里是授权成功之后 填写你重新获取数据的js
-                //参考:
-                this.getUserInfo();
-              }
-            }
-          })
+        if (res.code) {
+          console.log('res.code', res.code)
+          //发起网络请求
+          // wx.request({
+          //   url: 'https://test.com/onLogin',
+          //   data: {
+          //     code: res.code
+          //   }
+          // })
+        } else {
+          console.log('登录失败！' + res.errMsg)
         }
       }
-    })
-  }
+    });
+  },
 })
