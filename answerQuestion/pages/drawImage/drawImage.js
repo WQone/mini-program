@@ -206,6 +206,13 @@ Page({
       success: function (res) {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
+          success(res) {
+            wx.showToast({
+              title: '图片保存成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }
         });
         console.log(res.tempFilePath);
       },

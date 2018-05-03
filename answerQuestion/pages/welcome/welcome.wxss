@@ -3,17 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30rpx;
 }
 
 /* open-data 的 display 默认值是 inline ，需要改为 inline-block 或 block ，并设置 overflow 为 hidden 才能设置圆角。 */
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin-bottom: 30rpx; 
+  margin-bottom: 30rpx;
   border-radius: 50%;
   border: 1px solid white;
-  display:inline-block;
-  overflow:hidden;
+  display: inline-block;
+  overflow: hidden;
 }
 
 .userinfo-nickname {
@@ -24,19 +25,39 @@
 /* by me */
 
 .userChoose {
-background: white;
-height: 140rpx;
-width: 90%;
-margin-top: 60rpx;
-border-radius: 8rpx;
-padding: 14rpx; 
+  background: white;
+  height: 140rpx;
+  width: 80%;
+  margin-top: 28rpx;
+  border-radius: 8rpx;
+  padding: 10rpx 50rpx;
 }
 
-.userChoose_img{
+.userShare {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  z-index: 999;
+  border-radius: 50%;
+  left: 12px;
+  bottom: 30px;
+  padding: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.userShare > image {
+  width: 23px;
+  height: 23px;
+  padding: 6px;
+}
+
+.userChoose_img {
   float: left;
-  height: 140rpx;
-  width: 140rpx;
-  border-radius: 10%; 
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  margin: 20rpx 0;
+  padding: 5rpx;
 }
 .userChoose_text {
   color: pink;
@@ -44,16 +65,19 @@ padding: 14rpx;
   padding: 0 10rpx;
   float: left;
   overflow: hidden;
+  padding: 20rpx 10rpx;
+  margin-left: 15px;
 }
-.userChoose_text_title{
+.userChoose_text_title {
   display: block;
-  margin-bottom: 20rpx;
+  margin-bottom: 16rpx;
+  font-size: 32rpx;
 }
-.userChoose_text_content{
+.userChoose_text_content {
   font-size: 24rpx;
   color: #ccc;
   word-break: break-all;
   text-overflow: ellipsis;
-  overflow:hidden;
-  white-space:nowrap;
+  overflow: hidden;
+  white-space: nowrap;
 }
