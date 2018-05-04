@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/indexInfo/indexInfo",
     "pages/welcome/welcome",
     "pages/drawImage/drawImage",
     "pages/index/index",
-    "pages/indexInfo/indexInfo",
     "pages/question/question"
   ],
   "window": {

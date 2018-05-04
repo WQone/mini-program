@@ -1,8 +1,13 @@
 //index.js
+
 //获取应用实例
 var app = getApp();
 Page({
-  data: {},
+  data: {
+    windowHeight: wx.getSystemInfoSync().windowHeight,
+    loding: false,
+    animationTest: {},
+  },
   //事件处理函数
   toInfoPage() {
     wx.navigateTo({
@@ -16,8 +21,6 @@ Page({
     });
   },
   onLoad: function() {},
-  // 分享
-  shareM() {},
   // 右上角分享功能
   onShareAppMessage: function() {
     return {
@@ -41,14 +44,18 @@ Page({
   },
   // 显示赞赏码
   giveMoney() {
-    wx.previewImage({
-      current: '', // 当前显示图片的http链接
-      urls: [
-        'http://a4.qpic.cn/psb?/V138D4rB0wJstc/vBY.psUp86n2GkPBc2nMg09v11FQRssWvWPT3W8YZtU!/c/dEMBAAAAAAAA&ek=1&kp=1&pt=0&bo=UAVQBVAFUAUDORw!&vuin=1307144731&tm=1525316400&sce=60-2-2&rf=0-0',
-      ], // 需要预览的图片http链接列表
-    });
+    this.setData({ loding: true });
+    setTimeout(() => {
+      this.setData({ loding: false });
+      wx.previewImage({
+        current: '', // 当前显示图片的http链接
+        urls: [
+          'http://a4.qpic.cn/psb?/V138D4rB0wJstc/vBY.psUp86n2GkPBc2nMg09v11FQRssWvWPT3W8YZtU!/c/dEMBAAAAAAAA&ek=1&kp=1&pt=0&bo=UAVQBVAFUAUDORw!&vuin=1307144731&tm=1525316400&sce=60-2-2&rf=0-0',
+        ], // 需要预览的图片http链接列表
+      });
+    }, 1500);
   },
-  // 顶部下拉刷新
+  // 顶部下拉刷 新
   onPullDownRefresh() {
     setTimeout(() => {
       wx.stopPullDownRefresh();

@@ -1,2 +1,25 @@
 <image src="../../img/answerPage.jpg" mode="aspectFill" style='width:100%;'></image>
-  <button class="answer_button" bindtap="showQueation"> 去出题 </button>
+<button class="answer_button" bindtap="showQueation"> 去出题 </button>
+<button bindtap='testApi'>测试接口</button>
+<view style="display: flex; flex-direction: row;flex-wrap: wrap;justify-content:space-between;text-align:center;font-size:32rpx">
+  <view wx:for="{{starData}}" wx:key="astroid" style='width:30%;' data-param="{{item.astroid}}">
+    <image src="{{item.pic}}" style='width:100%;height:200rpx;border-radius:50%;'></image>
+    <view>{{item.astroname}}</view>
+    <view>{{item.date}}</view>
+  </view>
+  <!-- <view style='width:30%;'>
+    <image src="../../img/index-choose.jpg" style='width:100%;height:200rpx;'></image>
+    <view>天蝎座</view>
+    <view>1111111111</view>
+  </view>
+  <view style='width:30%;'>
+    <image src="../../img/index-choose.jpg" style='width:100%;height:200rpx;'></image>
+    <view>天蝎座</view>
+    <view>1111111111</view>
+  </view>
+  <view style='width:30%;'>
+    <image src="../../img/index-choose.jpg" style='width:100%;height:200rpx;'></image>
+    <view>天蝎座</view>
+    <view>1111111111</view>
+  </view> -->
+</view>
