@@ -13,7 +13,7 @@ App({
   },
   //  数据data
   globalData: {
-    userInfo: null
+    windowHeight: wx.getSystemInfoSync().windowHeight,
   },
   // 登录
   toLogin() {

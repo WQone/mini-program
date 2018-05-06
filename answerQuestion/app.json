@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/indexInfo/indexInfo",
+    "pages/question/question",
     "pages/welcome/welcome",
+    "pages/indexInfo/indexInfo",
     "pages/drawImage/drawImage",
-    "pages/index/index",
-    "pages/question/question"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -1,10 +1,33 @@
 <view class='answerPage'>
-   <view wx:for="{{questionList}}"  wx:key="questionList">
-  <view>
-     <view class='answer_question'> {{item.question}}</view>
-     <view  wx:for="{{item.answer}}"  wx:for-item="children"  wx:key="index">
-        <view class='answer_list' data-status="{{children.status}}" id="{{children.id}}" bindtap="NextQueation"> {{children.name}}</view>
-     </view>
-     </view>
+  <!-- <view style='width:90%;margin:auto;height:220rpx;background:red;'>
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+         <view class="picker"> 
+        当前选择：{{array[index]}}
+         </view> 
+      </picker>
+    </view>
+  </view> -->
+  <view style='height:{{windowHeight-100}}px;' class='bg_down'></view>
+  <view class='star_top'>
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          当前选择：{{array[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class='star_bottom'>
+    <view style='padding:0 20rpx;'>
+      <view class='data_nav'>
+        <view class='data_nav_li nav_active'>今日</view>
+        <view class='data_nav_li'>明日</view>
+        <view class='data_nav_li'>本周</view>
+        <view class='data_nav_li'>本月</view>
+        <view class='data_nav_li'>本年</view>
+      </view>
+    </view>
   </view>
 </view>

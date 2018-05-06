@@ -4,7 +4,7 @@
 var app = getApp();
 Page({
   data: {
-    windowHeight: wx.getSystemInfoSync().windowHeight,
+    windowHeight: app.globalData.windowHeight,
     loding: false,
     animationTest: {},
   },

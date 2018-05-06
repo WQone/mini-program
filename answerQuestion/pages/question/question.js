@@ -1,24 +1,23 @@
 //indexInfo.js
 //获取应用实例
 const app = getApp()
-const questionList = require('../../utils/questionList.js')
 
 Page({
   data: {
     questionIndex: 1,
     questionList: null,
+    array: ['美国', '中国', '巴西', '日本'],
+    index: 0,
+    windowHeight: app.globalData.windowHeight,
   },
-  onLoad: function (options) {
+  onLoad (options) {
     console.log(options);
-    this.setData({
-      questionList: questionList.myList,
-    })
   },
-  // 点击答案触发 
-  NextQueation(e) {
-    console.log(99999999997, e);
-    if (e.currentTarget.dataset.status) {
-      console.log('答对了');
-    }
+  bindPickerChange (e) {
+    console.log('picker发送选择改变，携带值为', e)
+    console.log('picker发送选择改变，携带值为', this.data.array[e.detail.value])
+    this.setData({
+      index: e.detail.value
+    })
   },
 })
