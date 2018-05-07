@@ -1,33 +1,70 @@
 <view class='answerPage'>
-  <!-- <view style='width:90%;margin:auto;height:220rpx;background:red;'>
-    <view class="section">
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-         <view class="picker"> 
-        当前选择：{{array[index]}}
-         </view> 
-      </picker>
-    </view>
-  </view> -->
   <view style='height:{{windowHeight-100}}px;' class='bg_down'></view>
   <view class='star_top'>
-    <view class="section">
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="section" style='position:relative;'>
+      <view style='padding:4rpx;background:white;border:4rpx solid pink;border-radius:50%;display:inline-block; position: absolute; top: 0; left: 40rpx;'>
+        <image src='{{starNow.pic}}' style="width:130rpx;height:130rpx;vertical-align:middle;border-radius:50%;"></image>
+      </view>
+      <view style="display:inline-block; position: absolute; top: 0; left: 220rpx; line-height: 64rpx;font-size:32rpx;padding:12rpx;">
+        <view>{{starNow.astroname}}</view>
+        <view>{{starNow.date}}</view>
+      </view>
+      <picker bindchange="bindPickerChange" value="{{starDataIndex}}" range="{{starDataArr}}" range-key="astroname" style='position:absolute;top:20px;right:20px;'>
         <view class="picker">
-          当前选择：{{array[index]}}
+          <image src='../../img/替换.png' style="width:40rpx;height:40rpx;vertical-align:middle;border:1px solid #ccc;"></image>
         </view>
       </picker>
     </view>
   </view>
 
   <view class='star_bottom'>
-    <view style='padding:0 20rpx;'>
-      <view class='data_nav'>
-        <view class='data_nav_li nav_active'>今日</view>
-        <view class='data_nav_li'>明日</view>
-        <view class='data_nav_li'>本周</view>
-        <view class='data_nav_li'>本月</view>
-        <view class='data_nav_li'>本年</view>
+    <view style='padding:0 3%;float:left;background:white;box-shadow: rgba(0, 0, 0, 0.2) 0 0 10rpx;font-size:28rpx;line-height:56rpx;width:94%;min-height:600rpx;'>
+      <view class='data_nav' style='font-size:32rpx;'>
+        <view class="{{dateActiveIndex === item ? 'nav_active' : ''}} data_nav_li" wx:for="{{dateArr}}" bindtap='changeDate' data-parmas="{{item}}" wx:key="{{item}}">{{item}}</view>
       </view>
+
+      <view class='data_content'>
+        <block wx:if="{{dateActiveIndex === '今日' || dateActiveIndex === '明日'}}">
+          <view style='padding:40rpx 0 50rpx 0;border-bottom:1px solid #CCC;float:left;width:100%;'>
+            <view class='data_content_left' style='width:60%;float:left;'>
+              <view wx:for="{{todayArr.list}}" wx:key="{{index}}" style='margin-bottom:30rpx;' wx:if="{{item.name === 'love' || item.name === 'money' || item.name === 'career' || item.name === 'summary'}}">
+                <text style='margin-right:20rpx;'>{{item.text}}</text>
+                <block wx:for="{{item.num - 0}}" wx:key="{{index}}">
+                  <image src='../../img/评分1.png' style="width:30rpx;height:30rpx;margin-right:10rpx;vertical-align:middle;"></image>
+                </block>
+                <block wx:for="{{5 - item.num}}" wx:key="{{index}}">
+                  <image src='../../img/评分.png' style="width:30rpx;height:30rpx;margin-right:10rpx;vertical-align:middle;"></image>
+                </block>
+              </view>
+            </view>
+            <view class='data_content_right' style='width:40%;float:left'>
+              <view wx:for="{{todayArr.list}}" wx:key="{{index}}" style='margin-bottom:30rpx;' wx:if="{{item.name === 'health' || item.name === 'color' || item.name === 'star' || item.name === 'number'}}">
+                <text style='margin-right:10rpx;'> {{item.text}}:</text>
+                <text style='color:pink;'> {{item.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='data_content_summary' style='padding:40rpx 0 50rpx 0;float:left;'>
+            {{todayArr.presummary}}{{todayArr.presummary}}{{todayArr.presummary}}
+          </view>
+        </block>
+         <block wx:if="{{dateActiveIndex === '本周' || dateActiveIndex === '本月'|| dateActiveIndex === '本年'}}">
+          <view class="data_content_else" wx:for="{{todayArr.list}}" wx:key="{{index}}" wx:if="{{item.name === 'summary1' || item.name === 'love1' || item.name === 'money1' || item.name === 'career1'|| item.name === 'health1'|| item.name === 'job1'}}">
+            <view class="data_content_else_left">
+              <image src="{{item.img}}" mode='aspectFit'>
+              </image>
+              <view>{{item.text}}</view>
+            </view>
+            <view class="data_content_else_right">
+              <text>{{item.num}}</text>
+            </view>
+          </view>
+        </block> 
+
+
+      </view>
+
     </view>
   </view>
+  <view style="position:relative;top:100px;">-</view>
 </view>

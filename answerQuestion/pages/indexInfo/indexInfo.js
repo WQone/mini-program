@@ -37,11 +37,8 @@ Page({
   // 获取详情
   getInfo(e) {
     console.log(e.currentTarget.dataset.param);
-    let id = e.currentTarget.dataset.param;
-    const form = {
-      astroid: e.currentTarget.dataset.param,
-    };
-    apiPage.getMsg(form).then((res) => {
+    let astroid = e.currentTarget.dataset.param;
+    apiPage.getMsg(astroid).then((res) => {
       if (res.data.code === '10000') {
         console.log(res.data.result.result);
         // const data = res.data.result.result;

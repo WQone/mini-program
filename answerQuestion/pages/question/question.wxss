@@ -24,26 +24,29 @@
 .star_top {
   width: 96%;
   margin: auto;
-  height: 220rpx;
-  background: red;
+  /* height: 220rpx; */
+  padding: 30rpx 0;
+  background: white;
   position: relative;
   top: 30px;
   z-index: 2;
   left: 0;
   border-radius: 8rpx;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 10rpx;
+  display:flex;
+  align-items:center;
 }
-
+.section{
+  height: 147rpx;
+   width: 100%;
+}
 .star_bottom {
   width: 96%;
   margin: auto;
-  height: 800rpx;
-  background: green;
   position: relative;
   top: 40px;
   z-index: 2;
   left: 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 10rpx;
 }
 
 .data_nav {
@@ -60,4 +63,35 @@
 .nav_active{
   border-bottom: 1rpx solid red;
   margin-bottom: -1rpx;
+}
+
+.data_content_else {
+  float:left;
+  width: 94%;
+  padding: 30rpx 3%; 
+  border-bottom: 1px solid #ccc;
+}
+.data_content_else_left{
+  float:left;width:100rpx;text-align:center;
+}
+.data_content_else_left>image {
+  float: left;
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  margin: 20rpx 0;
+  padding: 5rpx;
+  background: pink;
+  vertical-align: middle;
+}
+.data_content_else_right {
+  color: pink;
+  font-size: 30rpx;
+  float: right;
+  width: 80%;
+}
+.data_content_else_right> text {
+  font-size: 28rpx;
+  color: black;
+  text-align: right
 }

@@ -12,9 +12,9 @@ const path = {
 
 const getDate = () =>api.get(path.getDate);
 
-const getMsg = (form) =>
+const getMsg = (astroid) =>
   api.get(path.getMsg, {
-    ...form,
+    astroid,
   });
 
 export default {
