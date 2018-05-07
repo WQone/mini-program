@@ -14,7 +14,7 @@
   </view>
 
   <navigator url="/pages/drawImage/drawImage" hover-class="navigator-hover" class="userChoose">
-    <image src="../../img/绘画.png" class='userChoose_img' mode='aspectFit' style="background:white;">
+    <image src="../../img/draw.png" class='userChoose_img' mode='aspectFit' style="background:white;">
     </image>
     <view class="userChoose_text">
       <text class="userChoose_text_title">涂鸦</text>
@@ -23,7 +23,7 @@
   </navigator>
 
   <view class="userChoose" bindtap="toInfoPage">
-    <image src="../../img/星轨.png" class='userChoose_img' mode='aspectFit'>
+    <image src="../../img/star.png" class='userChoose_img' mode='aspectFit'>
     </image>
     <view class="userChoose_text">
       <text class="userChoose_text_title">你懂我吗？</text>
@@ -31,7 +31,7 @@
     </view>
   </view>
   <view class="userChoose" bindtap='giveMoney'>
-    <image src="../../img/打赏记录.png" class='userChoose_img' mode='aspectFit' style="background:white;">
+    <image src="../../img/moneys.png" class='userChoose_img' mode='aspectFit' style="background:white;">
     </image>
     <view class="userChoose_text">
       <text class="userChoose_text_title">打赏作者</text>
@@ -40,7 +40,7 @@
   </view>
   <button open-type="share">
     <view class="userShare">
-      <image src="../../img/分享.png" mode="scaleToFill"></image>
+      <image src="../../img/share.png" mode="scaleToFill"></image>
     </view>
   </button>
 
