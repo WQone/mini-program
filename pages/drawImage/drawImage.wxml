@@ -1,0 +1,24 @@
+<view class="container">
+  <!--画布区域-->
+  <view class="canvas_area">
+    <!--注意：同一页面中的 canvas-id 不可重复，如果使用一个已经出现过的 canvas-id，该 canvas 标签对应的画布将被隐藏并不再正常工作-->
+    <canvas canvas-id="myCanvas" class="myCanvas" id="myCanvas" disable-scroll="false" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    </canvas>
+  </view>
+  <!--画布工具区域-->
+  <view class='tools'>
+    <view  class="canvas_tools" animation="{{animationData}}">
+      <view wx:if="{{IsShowTool}}">
+        <view  class="box {{item.className}}" wx:for="{{toolList}}"  wx:key="toolList" data-type="{{item.type}}"  bindtap="Select"></view>
+        <view class="box box5" bindtap="clearCanvas"></view>
+        <view class="box box7" bindtap="chooseImage"></view>
+        <view class="box box6" bindtap="saveImage"></view>
+      </view>
+       <view  wx:if="{{!IsShowTool}}">
+        <view class="box box_return" bindtap="changeUp"></view>
+        <view  class="box {{item.className}}" wx:for="{{toolListActive.children}}"  wx:key="toolListActive.children" data-param="{{item.param}}"  bindtap="{{toolListActive.type}}" style="background-color: {{item.color}}"></view>
+      </view>
+    </view>
+
+  </view>
+</view>

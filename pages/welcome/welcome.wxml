@@ -1,0 +1,40 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- loding动画 -->
+  <view style="height:{{windowHeight}}px;" class="mask" wx:if="{{loding}}">
+    <view class="loader1">
+      <i></i>
+      <i></i>
+    </view>
+  </view>
+  <view class="userinfo">
+    <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+    <open-data type="userNickName" lang="zh_CN" class="userinfo-nickname"></open-data>
+  </view>
+  <navigator url="/pages/starTest/starTest" hover-class="navigator-hover" class="userChoose">
+    <image src="../../img/star.png" class="userChoose_img" mode="aspectFit"></image>
+    <view class="userChoose_text">
+      <text class="userChoose_text_title">星座运势</text>
+      <text class="userChoose_text_content">快来看看属于你的星座的运势</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/drawImage/drawImage" hover-class="navigator-hover" class="userChoose">
+    <image src="../../img/draw.png" class="userChoose_img" mode="aspectFit" style="background:white;"></image>
+    <view class="userChoose_text">
+      <text class="userChoose_text_title">涂鸦</text>
+      <text class="userChoose_text_content">开始创作属于自己的绘画作品</text>
+    </view>
+  </navigator>
+  <view class="userChoose" bindtap="giveMoney">
+    <image src="../../img/moneys.png" class="userChoose_img" mode="aspectFit" style="background:white;"></image>
+    <view class="userChoose_text">
+      <text class="userChoose_text_title">打赏作者</text>
+      <text class="userChoose_text_content">给作者一点支持</text>
+    </view>
+  </view>
+  <button open-type="share">
+    <view class="userShare">
+      <image src="../../img/share.png" mode="scaleToFill"></image>
+    </view>
+  </button>
+</view>

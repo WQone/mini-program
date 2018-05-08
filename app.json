@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/starTest/starTest",
+    "pages/drawImage/drawImage"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffc0cb",
+    "navigationBarTitleText": "星座与涂鸦",
+    "navigationBarTextStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
