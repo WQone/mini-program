@@ -11,14 +11,7 @@
 * animation加载loding动画
 
 
-## 部分截图
+## 演示
 
-- 首页
-<img src="https://raw.githubusercontent.com/WQone/my-examples/master/gitImg/welcome.png" width="280" height="auto"/>
+![看看我的演示吧](https://raw.githubusercontent.com/WQone/my-examples/master/gitImg/wx.gif)
 
-- 星座页
-
-<img src="https://raw.githubusercontent.com/WQone/my-examples/master/gitImg/starTest.png" width="280" height="auto"/>
-
-- 涂鸦页
- <img src="https://raw.githubusercontent.com/WQone/my-examples/master/gitImg/draw.png" width="280" height="auto"/>
