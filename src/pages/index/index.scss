@@ -1,0 +1,49 @@
+.container {
+  background: pink;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 40vh;
+  .navUl {
+    box-sizing: content-box;
+    background: white;
+    height: 140px;
+    width: 80%;
+    border-radius: 8px;
+    padding: 10px 50px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    &-li {
+      position: relative;
+      width: 100%;
+      &-img {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        padding:6px;
+      }
+      &-text {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        color: pink;
+        font-size: 30px;
+        overflow: hidden;
+        padding-left: 110px;
+        &-title {
+          display: block;
+          font-size: 32px;
+        }
+        &-content {
+          font-size: 24px;
+          color: #ccc;
+          word-break: break-all;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

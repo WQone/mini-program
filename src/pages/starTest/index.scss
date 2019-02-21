@@ -1,0 +1,29 @@
+.starPage {
+  position: relative;
+  background: white;
+  height: 100vh;
+  &::after {
+    content: '';
+    display: block;
+    height: 25vh;
+    width: 100%;
+    background: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .star-top {
+    width: 96%;
+    margin: auto;
+    padding: 30px 0;
+    background: white;
+    position: relative;
+    top: 15vh;
+    z-index: 2;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+    display: flex;
+    align-items: center;
+  }
+}
