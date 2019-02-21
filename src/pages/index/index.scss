@@ -2,7 +2,8 @@
   background: pink;
   height: 100vh;
   width: 100vw;
-  padding-top: 40vh;
+  padding-top: 35vh;
+  box-sizing: border-box;
   .navUl {
     box-sizing: content-box;
     background: white;
@@ -16,17 +17,20 @@
     &-li {
       position: relative;
       width: 100%;
+      height: 100px;
       &-img {
         height: 90px;
         width: 90px;
         border-radius: 50%;
-        padding:6px;
+        padding: 6px;
       }
       &-text {
+        box-sizing: border-box;
         position: absolute;
         width: 100%;
         left: 0;
         top: 0;
+        height: 100px;
         color: pink;
         font-size: 30px;
         overflow: hidden;

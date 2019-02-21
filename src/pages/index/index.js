@@ -13,10 +13,10 @@ export default class Index extends Component {
   goPage = (type) => {
     switch (type) {
       case 'star':
-        Taro.navigateTo({ url: '/pages/starTest' });
+        Taro.navigateTo({ url: '/pages/starTest/index' });
         break;
       case 'drawImage':
-        Taro.navigateTo({ url: '/pages/drawImage' });
+        Taro.navigateTo({ url: '/pages/drawImage/index' });
         break;
       case 'moneys':
         console.log('44');
