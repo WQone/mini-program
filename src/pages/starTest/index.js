@@ -138,11 +138,16 @@ export default class Index extends Component {
             {dateActiveIndex !== 'today' && dateActiveIndex !== 'tomorrow' && (
               <View className="star-content-body-else">
                 {[
-                  { text: '总结', name: 'summary', img: summaryPng, color: '#ff9900' },
-                  { text: '爱情', name: 'love', img: lovePng, color: '#ff4e9f' },
-                  { text: '财运', name: 'money', img: moneyPng, color: '#ff9900' },
-                  { text: '事业', name: 'career', img: workPng, color: '#13b9c7' },
-                  { text: '健康', name: 'health', img: healthPng, color: '#05be00' },
+                  {
+                    text: '总结',
+                    name: 'summary',
+                    img: summaryPng,
+                    color: 'rgba(166, 134, 186, 0.5)',
+                  },
+                  { text: '爱情', name: 'love', img: lovePng, color: 'rgba(255, 78, 159, 0.5)' },
+                  { text: '财运', name: 'money', img: moneyPng, color: 'rgba(255, 153, 0, 0.5)' },
+                  { text: '事业', name: 'career', img: workPng, color: 'rgba(19, 185, 199, 0.5)' },
+                  { text: '健康', name: 'health', img: healthPng, color: 'rgba(5, 190, 0, 0.5)' },
                 ].map((item, index) => {
                   return (
                     dateNowInfo[dateActiveIndex][item.name] && (

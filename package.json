@@ -28,12 +28,12 @@
     "@tarojs/taro-swan": "1.2.13",
     "@tarojs/taro-tt": "1.2.13",
     "@tarojs/taro-weapp": "1.2.13",
-    "nervjs": "^1.3.9",
-    "nerv-devtools": "^1.3.9"
+    "nervjs": "^1.3.12",
+    "nerv-devtools": "^1.3.12"
   },
   "devDependencies": {
     "@types/react": "^16.4.6",
-    "@types/webpack-env": "^1.13.6",
+    "@types/webpack-env": "^1.13.7",
     "@tarojs/plugin-babel": "1.2.13",
     "@tarojs/plugin-csso": "1.2.13",
     "@tarojs/plugin-sass": "1.2.13",

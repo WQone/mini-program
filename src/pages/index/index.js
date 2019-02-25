@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, OpenData, Text, Image } from '@tarojs/components';
+import { View, Text, Image } from '@tarojs/components';
 import './index.scss';
 import starPng from '../../images/star.png';
 import drawrPng from '../../images/draw.png';
